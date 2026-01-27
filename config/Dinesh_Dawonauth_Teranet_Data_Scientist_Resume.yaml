@@ -1,0 +1,31 @@
+template: resume
+profile: default
+
+include_experience:
+  - id: meridian-data-scientist
+    bullets:
+      - meridian-ds-predictive-models
+      - meridian-ds-ml-productionization
+      - meridian-ds-etl-pipelines
+      - meridian-ds-query-optimization
+      - meridian-ds-dashboards
+      - meridian-ds-cross-functional
+
+  - id: slice-jr-data-scientist
+    bullets:
+      - slice-ds-predictive-models
+      - slice-ds-etl-pipelines
+      - slice-ds-dashboards
+      - slice-ds-eda-hypothesis
+      - slice-ds-cross-functional
+
+  - id: carleton-teaching-assistant
+    bullets:
+      - carleton-ta-foundations
+      - carleton-ta-mentoring
+      - carleton-ta-python-sql
+
+include_projects:
+  - id: movie-recommendation
+  - id: stock-trading-bot
+  - id: techpulse

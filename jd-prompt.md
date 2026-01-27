@@ -87,28 +87,68 @@ Execute the following stages in strict sequence:
 1. Read `CLAUDE.md` and `CLAUDE-CONTEXT.md`.
 2. Confirm governance rules are understood.
 
-### Stage 2: Analyze JD
+### Stage 2: Analyze JD (jd-analyzer)
 
 1. Invoke `jd-analyzer` on the provided JD text.
 2. Extract: `role_title`, `experience_level`, `domain_tags`, `skills.required`, `skills.preferred`, `keywords`.
-3. Output structured JSON.
+3. Output structured JSON:
 
-### Stage 3: Search Content
+```json
+{
+  "role_title": "Data Scientist",
+  "experience_level": "Senior",
+  "domain_tags": ["ML", "Data Science", "Cloud"],
+  "skills": {
+    "required": ["Python", "SQL", "Machine Learning"],
+    "preferred": ["Deep Learning", "Spark"]
+  },
+  "keywords": ["Production ML", "Stakeholder engagement"]
+}
+```
+
+### Stage 3: Gap Analysis
+
+After extracting JD requirements, perform gap analysis against available content in `data/skills.yaml` and `content/`.
+
+**Output format - Content Matching Table:**
+
+| Requirement | Status |
+|-------------|--------|
+| Python | ✅ Covered |
+| SQL | ✅ Covered |
+| Snowflake | ❌ Gap |
+| 5+ years experience | ⚠️ Gap: ~4 years available |
+
+**Status Legend:**
+- ✅ Covered - Skill/experience exists in content
+- ⚠️ Partial/Gap - Partial match or experience gap
+- ❌ Gap - Not present in content
+
+**If critical gaps exist**, report them but continue building with available content. Note gaps in final summary.
+
+### Stage 4: Search Content
 
 1. Invoke `content-librarian` with extracted keywords.
 2. Query experience entries matching required skills.
 3. Query project entries matching domain tags.
 4. Record all valid IDs with relevance scores.
-5. If zero results for critical requirements, report gap and STOP.
 
-### Stage 4: Select Content
+### Stage 5: Select Content
 
 1. Rank experience entries by relevance to JD requirements.
 2. Rank project entries by relevance to JD domain.
 3. Select top entries respecting any constraints.
 4. Map specific bullet IDs for each experience entry.
 
-### Stage 5: Compose Manifest
+**Output format - Content Selection:**
+
+| Section | Items |
+|---------|-------|
+| Meridian | 6 bullets (list key themes) |
+| Slice | 5 bullets (list key themes) |
+| Projects | 3-4 (list project names) |
+
+### Stage 6: Compose Manifest
 
 1. Invoke `manifest-composer` with:
    - `target_filename`: Use naming convention `<FirstName>_<LastName>_<Company>_<Role>_Resume` (e.g., `Dinesh_Dawonauth_Google_Data_Scientist_Resume`). Derive FirstName/LastName from `data/profile.yaml`.
@@ -117,21 +157,68 @@ Execute the following stages in strict sequence:
    - `project_ids`: Ordered list.
 2. Verify manifest written to `config/<target_filename>.yaml`.
 
-### Stage 6: Validate
+### Stage 7: Validate
 
 1. Invoke `integrity-enforcer`.
 2. If `status: FAIL`: Parse errors, fix issues, repeat validation.
 3. If `status: PASS`: Proceed to build.
 
-### Stage 7: Build
+### Stage 8: Build
 
 1. Execute: `source .venv/bin/activate && PYTHONPATH=/Users/Dinesh/Desktop/resume-system python scripts/engine.py --manifest config/<target_filename>.yaml`
 2. Verify output at `out/<target_filename>.html`.
 
-### Stage 8: Generate PDF
+### Stage 9: Generate PDF
 
 1. Execute: `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --print-to-pdf="out/<target_filename>.pdf" --no-pdf-header-footer "out/<target_filename>.html"`
 2. Verify PDF generated.
+3. Read PDF to verify it fits on **single page**. If overflow, reduce content and rebuild.
+
+### Stage 10: Build Summary
+
+After successful build, output a structured summary:
+
+**Build Summary Table:**
+
+| Stage | Status |
+|-------|--------|
+| JD Analysis | Extracted: [role] ([level]), [domain tags] |
+| Validation | PASS |
+| Build | PASS (Xms) |
+| PDF Generation | PASS (XKB, 1 page) |
+| Protocol Zero | PASS |
+
+**Artifacts:**
+- `config/<manifest_name>.yaml`
+- `out/<manifest_name>.html`
+- `out/<manifest_name>.pdf`
+
+**Content Selected:**
+
+| Section | Count |
+|---------|-------|
+| Experience 1 | X bullets |
+| Experience 2 | X bullets |
+| Projects | X |
+
+**JD Alignment:**
+
+| Requirement | Coverage |
+|-------------|----------|
+| Key Skill 1 | ✅ How it's covered |
+| Key Skill 2 | ✅ How it's covered |
+| Key Skill 3 | ⚠️ Gap noted |
+
+**Gaps (if any):**
+
+| Gap | Impact |
+|-----|--------|
+| Missing Skill | High/Medium/Low - explanation |
+| Experience Gap | High - X years required, Y available |
+
+**Recommendations (if applicable):**
+- If skills are missing, suggest adding to `data/skills.yaml`
+- If experience gap is significant, note it may not be a strong fit
 
 ---
 
@@ -180,6 +267,14 @@ Before declaring completion, verify:
 - [ ] PDF renders as single page
 - [ ] No Protocol Zero violations
 
+### Single Page Enforcement
+
+If PDF overflows to 2 pages:
+1. Read the PDF to identify overflow
+2. Reduce content (remove bullets or projects)
+3. Rebuild and regenerate PDF
+4. Repeat until single page achieved
+
 ---
 
 ## 8. JD Input Section
@@ -202,4 +297,4 @@ After pasting the JD above, state:
 
 "Build resume for this JD."
 
-The agent will execute the full pipeline and output the tailored resume.
+The agent will execute the full pipeline and output the tailored resume with gap analysis and build summary.

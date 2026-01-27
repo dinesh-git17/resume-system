@@ -28,6 +28,7 @@ frameworks:
 
 databases:
   - duckdb
+  - mysql
   - postgresql
   - redis
   - sqlite
@@ -35,8 +36,11 @@ databases:
 
 tools:
   - anthropic
+  - apache-kafka
+  - apache-spark
   - biome
   - docker
+  - excel
   - git
   - github-actions
   - google-genai
@@ -45,9 +49,11 @@ tools:
   - openai
   - playwright
   - pnpm
+  - power-bi
   - pre-commit
   - pytest
   - ruff
+  - tableau
   - uv
   - vitest
 
