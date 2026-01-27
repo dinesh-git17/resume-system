@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JobDescriptionExtraction",
+  "type": "object",
+  "properties": {
+    "role_title": {
+      "type": "string",
+      "description": "The official title of the role found in the JD."
+    },
+    "experience_level": {
+      "type": "string",
+      "enum": [
+        "Intern",
+        "Junior",
+        "Mid",
+        "Senior",
+        "Staff",
+        "Principal",
+        "Executive",
+        "Unknown"
+      ],
+      "description": "The seniority level implied or stated."
+    },
+    "domain_tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "High-level domains (e.g., 'Backend', 'ML', 'Frontend', 'DevOps')."
+    },
+    "skills": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Skills explicitly listed as mandatory or 'must have'."
+        },
+        "preferred": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Skills listed as 'nice to have', 'bonus', or 'plus'."
+        }
+      },
+      "required": ["required", "preferred"]
+    },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Other significant keywords for semantic matching (e.g., 'High Scale', 'Remote', 'Startup')."
+    }
+  },
+  "required": ["role_title", "skills", "domain_tags"]
+}

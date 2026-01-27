@@ -1,0 +1,9 @@
+entries:
+  - id: INVALID_UPPERCASE_ID
+    company: Test Company
+    role: Engineer
+    location: NYC
+    start_date: "2020-01"
+    highlights:
+      - id: valid-bullet
+        text: Achievement text.

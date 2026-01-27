@@ -1,0 +1,68 @@
+[project]
+name = "resume-system"
+version = "0.1.0"
+description = "Resume-as-Code monorepo for LLM-orchestrated resume generation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Resume System Team" }
+]
+
+dependencies = [
+    "pydantic>=2.0,<3.0",
+    "pydantic[email]>=2.0,<3.0",
+    "jinja2>=3.0,<4.0",
+    "pyyaml>=6.0,<7.0",
+    "pytailwindcss>=0.2.0,<1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=3.0,<4.0",
+    "yamllint>=1.32,<2.0",
+    "pytest>=8.0,<9.0",
+    "pytest-cov>=4.0,<5.0",
+    "ruff>=0.4.0,<1.0",
+    "mypy>=1.10,<2.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=3.0,<4.0",
+    "yamllint>=1.32,<2.0",
+    "pytest>=8.0,<9.0",
+    "pytest-cov>=4.0,<5.0",
+    "ruff>=0.4.0,<1.0",
+    "mypy>=1.10,<2.0",
+    "types-pyyaml>=6.0.12.20250915",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["scripts", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+exclude = ["__pycache__", ".venv", "out"]

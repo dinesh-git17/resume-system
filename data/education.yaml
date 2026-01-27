@@ -1,0 +1,19 @@
+entries:
+  - id: carleton-bmath
+    institution: Carleton University
+    degree: Bachelor of Mathematics
+    field_of_study: Statistics Honours
+    location: Ottawa, ON
+    start_date: "2018-09"
+    end_date: "2023-06"
+    honors:
+      - Dean's List
+    coursework:
+      - Probability Theory
+      - Statistical Inference
+      - Machine Learning
+      - Database Systems & SQL
+      - Data Structures & Algorithms
+      - Applied Regression Modeling
+      - Data Pipelines & ETL Design
+      - Time Series Analysis & Forecasting

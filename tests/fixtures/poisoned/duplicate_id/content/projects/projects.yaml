@@ -1,0 +1,13 @@
+entries:
+  - id: proj-1
+    name: Project One
+    description: A project description.
+    highlights:
+      - id: duplicate-bullet-id
+        text: Project achievement one.
+  - id: proj-2
+    name: Project Two
+    description: Another project.
+    highlights:
+      - id: duplicate-bullet-id
+        text: Project achievement two.

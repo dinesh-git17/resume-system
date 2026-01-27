@@ -1,0 +1,68 @@
+languages:
+  - javascript
+  - python
+  - sql
+  - typescript
+
+frameworks:
+  - capacitor
+  - dagster
+  - dbt
+  - fastapi
+  - framer-motion
+  - next.js
+  - pandas
+  - pydantic
+  - react
+  - scikit-learn
+  - tailwindcss
+  - tensorflow
+  - textual
+  - vite
+  - xgboost
+
+databases:
+  - duckdb
+  - postgresql
+  - redis
+  - sqlite
+  - supabase
+
+tools:
+  - anthropic
+  - biome
+  - docker
+  - github-actions
+  - google-genai
+  - husky
+  - mypy
+  - openai
+  - playwright
+  - pnpm
+  - pre-commit
+  - pytest
+  - ruff
+  - uv
+  - vitest
+
+platforms:
+  - ios
+  - sentry
+  - vercel
+
+methodologies:
+  - A/B Testing Design
+  - CI/CD for Data Pipelines
+  - Data Modeling
+  - Data Quality and Validation
+  - ETL/ELT Pipeline Design
+  - Reproducible Research
+
+other:
+  - API Design for Data Services
+  - Feature Engineering
+  - Hyperparameter Tuning
+  - Model Evaluation
+  - Statistical Hypothesis Testing
+  - Technical Documentation
+  - Time Series Forecasting

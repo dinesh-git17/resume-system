@@ -1,0 +1,169 @@
+entries:
+  - id: passfx
+    name: PassFX
+    description: A zero-knowledge, local-first TUI for managing secrets — built with standard cryptography and designed to never touch the network.
+    repository: https://github.com/dinesh-git17/passfx
+    role: Creator
+    technologies:
+      - python
+      - cryptography
+      - textual
+      - rich
+    highlights:
+      - id: passfx-security
+        text: Implemented zero-knowledge architecture with AES-256-GCM encryption, ensuring secrets never leave the local device.
+        tags:
+          - python
+          - cryptography
+
+  - id: techpulse
+    name: TechPulse
+    description: A full-stack monorepo for data-driven applications with FastAPI REST API, Dagster data orchestration, and Next.js web UI.
+    repository: https://github.com/dinesh-git17/techpulse
+    role: Creator
+    technologies:
+      - python
+      - fastapi
+      - dagster
+      - dbt
+      - duckdb
+      - redis
+    highlights:
+      - id: techpulse-pipeline
+        text: Built end-to-end data pipeline with Dagster orchestration and dbt transformations on DuckDB.
+        tags:
+          - python
+          - dagster
+          - dbt
+
+  - id: debate-lab
+    name: Debate Lab
+    description: Watch AI models debate any topic in real-time. ChatGPT and Grok argue, Claude moderates.
+    repository: https://github.com/dinesh-git17/debate-lab
+    role: Creator
+    technologies:
+      - typescript
+      - next.js
+      - react
+      - supabase
+      - openai
+      - anthropic
+      - tailwindcss
+    highlights:
+      - id: debate-lab-realtime
+        text: Integrated multiple AI provider APIs (OpenAI, Anthropic, Google) for real-time multi-model debate streaming.
+        tags:
+          - typescript
+          - openai
+          - anthropic
+
+  - id: yield-visualizer
+    name: Yield
+    description: An interactive algorithm visualizer that turns data structures into something you can actually see, step through, and understand. Built for learning, teaching, and satisfying curiosity.
+    repository: https://github.com/dinesh-git17/yield
+    role: Creator
+    technologies:
+      - typescript
+      - next.js
+      - react
+      - tailwindcss
+      - framer-motion
+    highlights:
+      - id: yield-visualization
+        text: Created step-through animations for sorting algorithms and data structure operations with interactive controls.
+        tags:
+          - typescript
+          - react
+
+  - id: movie-recommendation
+    name: Movie Recommendation System
+    description: An end-to-end movie recommendation system using the MovieLens 100K dataset. It leverages collaborative filtering and NMF-based matrix factorization, includes a dynamic feedback loop for model updates, and features an interactive Streamlit dashboard for analytics and A/B testing.
+    repository: https://github.com/dinesh-git17/movie_recommendation
+    role: Creator
+    technologies:
+      - python
+      - pandas
+      - scikit-learn
+      - streamlit
+    highlights:
+      - id: movie-rec-ml
+        text: Implemented collaborative filtering and NMF-based matrix factorization with dynamic feedback loop for model updates.
+        tags:
+          - python
+          - scikit-learn
+
+  - id: stock-trading-bot
+    name: Stock Trading Bot
+    description: AI-powered bot that predicts stock trends using real-time and historical data. Stores data in a structured database, applies advanced ML models for forecasting, and features a Next.js dashboard for visualization.
+    repository: https://github.com/dinesh-git17/stock-trading-bot
+    role: Creator
+    technologies:
+      - python
+      - tensorflow
+      - xgboost
+      - pandas
+      - scikit-learn
+      - postgresql
+    highlights:
+      - id: stock-bot-forecasting
+        text: Built ML forecasting pipeline with TensorFlow and XGBoost models for stock trend prediction.
+        tags:
+          - python
+          - tensorflow
+          - xgboost
+
+  - id: claudehome
+    name: Claude Home
+    description: An experimental system exploring architectural persistence for large language models. Provides a durable filesystem and scheduled execution that allow a single Claude instance to re-encounter its prior outputs across sessions.
+    repository: https://github.com/dinesh-git17/claudehome
+    role: Creator
+    technologies:
+      - typescript
+      - next.js
+      - react
+      - docker
+    highlights:
+      - id: claudehome-persistence
+        text: Designed filesystem-based persistence layer enabling model state continuity across execution sessions.
+        tags:
+          - typescript
+          - docker
+
+  - id: claude-runner
+    name: Claude Runner
+    description: Backend infrastructure for Claude Home, enabling persistence, memory, and real time awareness in a filesystem where an AI exists over time.
+    repository: https://github.com/dinesh-git17/claude-runner
+    role: Creator
+    technologies:
+      - python
+      - fastapi
+      - anthropic
+      - pydantic
+      - docker
+    highlights:
+      - id: claude-runner-backend
+        text: Built FastAPI backend with Anthropic SDK integration for scheduled AI task execution and memory persistence.
+        tags:
+          - python
+          - fastapi
+          - anthropic
+
+  - id: dinbuilds-portfolio
+    name: DinBuilds Portfolio
+    description: An interactive web portfolio built as a desktop-style operating system, showcasing projects, experience, and design decisions through a windowed UI.
+    repository: https://github.com/dinesh-git17/dinbuilds-portfolio
+    role: Creator
+    technologies:
+      - typescript
+      - next.js
+      - react
+      - tailwindcss
+      - framer-motion
+      - redis
+    highlights:
+      - id: portfolio-os-ui
+        text: Created desktop OS-style interface with draggable windows, taskbar, and file system navigation.
+        tags:
+          - typescript
+          - react
+          - framer-motion

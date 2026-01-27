@@ -1,0 +1,9 @@
+template: faang-classic
+profile: nonexistent-profile
+include_experience:
+  - id: nonexistent-experience-id
+  - id: valid-exp
+    bullets:
+      - nonexistent-bullet-id
+include_projects:
+  - id: nonexistent-project-id

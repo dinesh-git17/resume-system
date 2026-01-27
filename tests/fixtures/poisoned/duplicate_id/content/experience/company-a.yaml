@@ -1,0 +1,9 @@
+entries:
+  - id: duplicate-entry-id
+    company: Company A
+    role: Engineer
+    location: NYC
+    start_date: "2020-01"
+    highlights:
+      - id: unique-bullet-1
+        text: Achievement from company A.

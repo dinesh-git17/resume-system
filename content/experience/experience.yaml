@@ -1,0 +1,132 @@
+entries:
+  - id: meridian-data-scientist
+    company: Meridian Credit Union
+    role: Data Scientist
+    location: Toronto, Ontario, Canada
+    start_date: "2024-04"
+    end_date: Present
+    highlights:
+      - id: meridian-ds-etl-pipelines
+        text: Designed, built, and maintained production-grade ETL/ELT pipelines to ingest, transform, and validate financial and operational data from multiple internal and third-party systems
+
+      - id: meridian-ds-reporting-automation
+        text: Automated recurring reporting and analytics workflows, reducing manual analysis time and improving data freshness for business stakeholders
+
+      - id: meridian-ds-query-optimization
+        text: Modeled and optimized large datasets in PostgreSQL/DuckDB using indexing, query tuning, and dimensional modeling for fast analytical queries
+
+      - id: meridian-ds-predictive-models
+        text: Developed predictive and statistical models for risk, customer behavior, and business performance forecasting, translating outputs into actionable insights for leadership
+
+      - id: meridian-ds-ml-productionization
+        text: Partnered with engineering and product teams to productionize machine learning models through APIs and scheduled batch jobs
+
+      - id: meridian-ds-data-quality
+        text: Implemented data quality checks, schema validation, and monitoring to detect failures early and improve pipeline reliability
+
+      - id: meridian-ds-dashboards
+        text: Built internal dashboards and self-serve analytics tools to enable non-technical teams to explore KPIs without engineering support
+
+      - id: meridian-ds-workflow-orchestration
+        text: Orchestrated workflows and dependencies using modern pipeline tooling, ensuring reproducible and observable data processes
+
+      - id: meridian-ds-eda-hypothesis
+        text: Conducted exploratory data analysis and hypothesis testing to inform product decisions and measure experiment outcomes
+
+      - id: meridian-ds-feature-engineering
+        text: Standardized feature engineering and preprocessing steps to create reusable datasets for downstream ML and analytics use cases
+
+      - id: meridian-ds-performance-tuning
+        text: Improved performance of heavy transformations through vectorized operations and efficient SQL, lowering compute costs and runtime
+
+      - id: meridian-ds-incident-response
+        text: Established logging, alerting, and incident response practices to handle pipeline failures and maintain SLAs
+
+      - id: meridian-ds-cross-functional
+        text: Collaborated cross-functionally with analysts, engineers, and stakeholders to translate business requirements into reliable data systems
+
+      - id: meridian-ds-documentation
+        text: Documented architecture, datasets, and contracts to ensure maintainability and knowledge sharing across the team
+
+  - id: slice-jr-data-scientist
+    company: Slice Labs
+    role: Jr Data Scientist
+    location: Ottawa, Ontario, Canada (Remote)
+    start_date: "2021-04"
+    end_date: "2023-01"
+    highlights:
+      - id: slice-ds-predictive-models
+        text: Built and deployed predictive models (Logistic Regression, Decision Trees, ensemble methods) to improve customer retention and risk scoring accuracy to ~85%
+
+      - id: slice-ds-etl-pipelines
+        text: Designed and automated end-to-end ETL pipelines to ingest, clean, and transform raw operational data, reducing processing time by 50%
+
+      - id: slice-ds-data-modeling
+        text: Modeled structured datasets in SQL-based warehouses to support fast, reliable analytics and reporting for business stakeholders
+
+      - id: slice-ds-feature-engineering
+        text: Performed feature engineering, data preprocessing, and validation to create production-ready training datasets
+
+      - id: slice-ds-scoring-workflows
+        text: Developed real-time and batch scoring workflows to operationalize machine learning models within core business systems
+
+      - id: slice-ds-dashboards
+        text: Created executive-facing dashboards and metrics in Apache Superset to track KPIs, customer behavior, and product performance
+
+      - id: slice-ds-api-integration
+        text: Partnered with engineers to integrate model predictions into APIs and internal services for automated decision-making
+
+      - id: slice-ds-eda-hypothesis
+        text: Conducted exploratory data analysis and hypothesis testing to uncover trends and inform product and growth strategies
+
+      - id: slice-ds-data-quality
+        text: Implemented data quality checks and monitoring to detect anomalies and prevent downstream reporting issues
+
+      - id: slice-ds-query-optimization
+        text: Optimized SQL queries and transformations to improve pipeline efficiency and reduce compute costs
+
+      - id: slice-ds-cross-functional
+        text: Collaborated cross-functionally with analysts, product managers, and engineers to translate business problems into measurable data solutions
+
+      - id: slice-ds-documentation
+        text: Documented pipeline architecture, model assumptions, and experiment results to ensure reproducibility and maintainability
+
+  - id: carleton-teaching-assistant
+    company: Carleton University
+    role: Teaching Assistant (Mathematics & Statistics)
+    location: Greater Ottawa Metropolitan Area
+    start_date: "2019-09"
+    end_date: "2023-07"
+    highlights:
+      - id: carleton-ta-tutorials
+        text: Led tutorials and lab sessions for probability, statistics, and data analysis courses, translating theoretical concepts into practical, computation-focused workflows
+
+      - id: carleton-ta-python-sql
+        text: Guided students through Python- and SQL-based data analysis assignments, emphasizing reproducible code, clean data practices, and structured problem solving
+
+      - id: carleton-ta-foundations
+        text: Taught core foundations used in modern data science including statistical inference, regression modeling, hypothesis testing, and experimental design
+
+      - id: carleton-ta-hands-on-labs
+        text: Designed and delivered hands-on labs covering data preprocessing, exploratory data analysis, and numerical computing
+
+      - id: carleton-ta-debugging
+        text: Debugged student code and optimized inefficient implementations, reinforcing best practices in algorithmic thinking and performance
+
+      - id: carleton-ta-grading
+        text: Developed grading rubrics and automated evaluation scripts to ensure consistent, scalable assessment across large cohorts
+
+      - id: carleton-ta-curriculum
+        text: Collaborated with faculty to modernize course material with applied analytics and real-world datasets to better reflect industry practices
+
+      - id: carleton-ta-mentoring
+        text: Mentored students one-on-one on projects involving machine learning models, data cleaning, and pipeline design
+
+      - id: carleton-ta-communication
+        text: Communicated complex mathematical and technical ideas clearly to audiences with varying levels of experience, strengthening cross-functional communication skills
+
+      - id: carleton-ta-scale
+        text: Supported classes of 100+ students simultaneously, balancing instructional quality with operational efficiency
+
+      - id: carleton-ta-software-discipline
+        text: Reinforced software engineering discipline through version control, documentation, and structured experimentation in coursework

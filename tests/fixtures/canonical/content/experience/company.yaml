@@ -1,0 +1,18 @@
+entries:
+  - id: test-company-swe
+    company: Test Company
+    role: Software Engineer
+    location: San Francisco, CA
+    start_date: "2019-06"
+    end_date: Present
+    highlights:
+      - id: test-company-achievement-1
+        text: Designed and implemented distributed system.
+        tags:
+          - go
+          - grpc
+      - id: test-company-achievement-2
+        text: Led migration of legacy services.
+        tags:
+          - python
+          - kubernetes

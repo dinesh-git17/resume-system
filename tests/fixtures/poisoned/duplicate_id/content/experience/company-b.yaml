@@ -1,0 +1,9 @@
+entries:
+  - id: duplicate-entry-id
+    company: Company B
+    role: Senior Engineer
+    location: LA
+    start_date: "2021-01"
+    highlights:
+      - id: unique-bullet-2
+        text: Achievement from company B.

@@ -1,0 +1,16 @@
+entries:
+  - id: test-project-1
+    name: Open Source Project
+    description: A distributed caching library.
+    start_date: "2020-01"
+    end_date: Present
+    repository: https://github.com/testuser/project
+    technologies:
+      - go
+      - redis
+    highlights:
+      - id: test-project-1-highlight-1
+        text: Achieved significant adoption.
+        tags:
+          - go
+          - open-source

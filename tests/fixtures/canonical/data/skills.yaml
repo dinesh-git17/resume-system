@@ -1,0 +1,21 @@
+languages:
+  - python
+  - go
+  - java
+frameworks:
+  - django
+  - react
+databases:
+  - postgresql
+  - redis
+tools:
+  - docker
+  - kubernetes
+platforms:
+  - gcp
+  - aws
+methodologies:
+  - Agile/Scrum
+  - TDD
+other:
+  - System Design

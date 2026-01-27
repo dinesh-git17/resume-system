@@ -1,0 +1,9 @@
+entries:
+  - id: test-university-bs
+    institution: Test University
+    degree: Bachelor of Science
+    field_of_study: Computer Science
+    location: Test City, ST
+    start_date: "2015-09"
+    end_date: "2019-05"
+    gpa: "3.8/4.0"

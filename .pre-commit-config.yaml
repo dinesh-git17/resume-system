@@ -1,0 +1,49 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+        name: Check YAML syntax
+        files: ^(data|content|config)/.*\.ya?ml$
+
+      - id: check-added-large-files
+        args: ['--maxkb=500']
+
+      - id: end-of-file-fixer
+        files: ^(data|content|config)/.*\.ya?ml$
+
+      - id: trailing-whitespace
+        files: ^(data|content|config)/.*\.ya?ml$
+
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        name: Lint YAML files
+        files: ^(data|content|config)/.*\.ya?ml$
+        args: ['-c', '.yamllint.yaml']
+
+  - repo: local
+    hooks:
+      - id: protocol-zero-commit-msg
+        name: Protocol Zero (commit message)
+        entry: ./scripts/protocol-zero.sh --commit-msg-file
+        language: script
+        stages: [commit-msg]
+        always_run: true
+
+      - id: protocol-zero-codebase
+        name: Protocol Zero (codebase scan)
+        entry: ./scripts/protocol-zero.sh --dir .
+        language: script
+        stages: [pre-commit]
+        pass_filenames: false
+        always_run: true
+
+      - id: lint
+        name: Lint (ruff/mypy/yamllint)
+        entry: ./scripts/lint.sh
+        language: script
+        stages: [pre-commit]
+        pass_filenames: false
+        files: \.(py|yaml|yml)$

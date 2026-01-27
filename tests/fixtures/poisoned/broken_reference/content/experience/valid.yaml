@@ -1,0 +1,9 @@
+entries:
+  - id: valid-exp
+    company: Valid Company
+    role: Engineer
+    location: NYC
+    start_date: "2020-01"
+    highlights:
+      - id: valid-bullet
+        text: Valid achievement.
