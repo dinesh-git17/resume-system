@@ -1,6 +1,7 @@
 languages:
   - javascript
   - python
+  - r
   - sql
   - typescript
 
@@ -10,14 +11,18 @@ frameworks:
   - dbt
   - fastapi
   - framer-motion
+  - keras
   - next.js
+  - numpy
   - pandas
   - pydantic
+  - pytorch
   - react
   - scikit-learn
   - tailwindcss
   - tensorflow
   - textual
+  - tidyverse
   - vite
   - xgboost
 
@@ -32,6 +37,7 @@ tools:
   - anthropic
   - biome
   - docker
+  - git
   - github-actions
   - google-genai
   - husky
@@ -46,6 +52,7 @@ tools:
   - vitest
 
 platforms:
+  - aws
   - ios
   - sentry
   - vercel

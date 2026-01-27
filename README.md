@@ -75,7 +75,7 @@ resume-system/
 │   └── projects/             # Portfolio with highlights
 │
 ├── config/                   # Build manifests
-│   └── job.yaml              # Specifies IDs to include
+│   └── <FirstName>_<LastName>_<Company>_<Role>_Resume.yaml  # Naming convention
 │
 ├── templates/                # Jinja2 templates (read-only)
 │   └── resume.html.j2        # HTML resume template
@@ -137,7 +137,7 @@ entries:
 Manifests reference these IDs to select content:
 
 ```yaml
-# config/job.yaml
+# config/<FirstName>_<LastName>_<Company>_<Role>_Resume.yaml
 include_experience:
   - id: company-role-swe
     bullets:
@@ -163,7 +163,8 @@ Exit codes: `0` = pass, `1` = validation errors, `2` = internal error
 ### Build
 
 ```bash
-python scripts/engine.py --manifest config/job.yaml
+# Manifest naming convention: <FirstName>_<LastName>_<Company>_<Role>_Resume.yaml
+python scripts/engine.py --manifest config/Dinesh_Dawonauth_Google_Data_Scientist_Resume.yaml
 ```
 
 Pipeline stages:
@@ -178,7 +179,7 @@ Pipeline stages:
 For bit-identical reproducible builds:
 
 ```bash
-python scripts/engine.py --manifest config/job.yaml --reproducible
+python scripts/engine.py --manifest config/Dinesh_Dawonauth_Google_Data_Scientist_Resume.yaml --reproducible
 ```
 
 ## Claude Code Integration
@@ -227,16 +228,17 @@ source .venv/bin/activate
 
 ```bash
 ./scripts/validate.sh
-python scripts/engine.py --manifest config/job.yaml
+python scripts/engine.py --manifest config/Dinesh_Dawonauth_Example_Resume.yaml
 ```
 
 ## Usage
 
 ### Create a New Resume Variant
 
-1. Create a manifest in `config/`:
+1. Create a manifest in `config/` using naming convention `<FirstName>_<LastName>_<Company>_<Role>_Resume.yaml`:
 
 ```yaml
+# config/Dinesh_Dawonauth_Google_SWE_Resume.yaml
 template: resume
 profile: default
 
@@ -260,10 +262,10 @@ include_projects:
 3. Build:
 
 ```bash
-python scripts/engine.py --manifest config/target-company.yaml
+python scripts/engine.py --manifest config/Dinesh_Dawonauth_Google_SWE_Resume.yaml
 ```
 
-4. Output: `out/target-company.html`
+4. Output: `out/Dinesh_Dawonauth_Google_SWE_Resume.html`
 
 ### Add New Content
 

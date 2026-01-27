@@ -25,7 +25,7 @@ These files define governance rules and operational context. Violations result i
 
 ### Optional
 
-- **Target filename:** Name for the output manifest (default: derived from company/role).
+- **Target filename:** Name for the output manifest. Convention: `<FirstName>_<LastName>_<Company>_<Role>_Resume` (e.g., `Dinesh_Dawonauth_Google_Data_Scientist_Resume`).
 - **Bullet constraints:** Maximum bullets per experience entry.
 - **Project constraints:** Maximum projects to include.
 
@@ -111,7 +111,7 @@ Execute the following stages in strict sequence:
 ### Stage 5: Compose Manifest
 
 1. Invoke `manifest-composer` with:
-   - `target_filename`: Derived from company/role or user-specified.
+   - `target_filename`: Use naming convention `<FirstName>_<LastName>_<Company>_<Role>_Resume` (e.g., `Dinesh_Dawonauth_Google_Data_Scientist_Resume`). Derive FirstName/LastName from `data/profile.yaml`.
    - `profile`: `default`
    - `experience_ids`: Ordered list with bullet selections.
    - `project_ids`: Ordered list.
@@ -165,11 +165,11 @@ You MUST halt execution and report if:
 
 ### Artifacts Produced
 
-| Artifact    | Location               | Description                               |
-| ----------- | ---------------------- | ----------------------------------------- |
-| Manifest    | `config/<target>.yaml` | Build configuration selecting content IDs |
-| HTML Resume | `out/<target>.html`    | Rendered resume from template             |
-| PDF Resume  | `out/<target>.pdf`     | Print-ready PDF via Chrome headless       |
+| Artifact    | Location                                                        | Description                               |
+| ----------- | --------------------------------------------------------------- | ----------------------------------------- |
+| Manifest    | `config/<FirstName>_<LastName>_<Company>_<Role>_Resume.yaml`    | Build configuration selecting content IDs |
+| HTML Resume | `out/<FirstName>_<LastName>_<Company>_<Role>_Resume.html`       | Rendered resume from template             |
+| PDF Resume  | `out/<FirstName>_<LastName>_<Company>_<Role>_Resume.pdf`        | Print-ready PDF via Chrome headless       |
 
 ### Verification Checklist
 

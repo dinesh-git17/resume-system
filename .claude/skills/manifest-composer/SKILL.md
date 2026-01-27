@@ -23,7 +23,7 @@ To mechanically construct valid `config/*.yaml` Build Manifests. This skill tran
 
 ## Input
 
-- `target_filename`: The name of the file to create (e.g., `google-staff.yaml`).
+- `target_filename`: The name of the file to create. Convention: `<FirstName>_<LastName>_<Company>_<Role>_Resume` (e.g., `Dinesh_Dawonauth_Google_Data_Scientist_Resume.yaml`).
 - `profile`: The profile key to use (default: `default`).
 - `experience_ids`: A list of strings representing Experience Entry IDs.
 - `project_ids`: A list of strings representing Project IDs.

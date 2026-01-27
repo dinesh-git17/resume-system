@@ -5,8 +5,10 @@ Command-line interface for building resume artifacts from manifest
 configurations. Orchestrates the load-resolve-assemble-render-write pipeline.
 
 Usage:
-    python scripts/engine.py --manifest config/job.yaml
-    python scripts/engine.py --manifest config/job.yaml --reproducible
+    python scripts/engine.py --manifest config/Dinesh_Dawonauth_Google_Data_Scientist_Resume.yaml
+    python scripts/engine.py --manifest config/Dinesh_Dawonauth_Google_Data_Scientist_Resume.yaml --reproducible
+
+Manifest naming convention: <FirstName>_<LastName>_<Company>_<Role>_Resume.yaml
 """
 
 from __future__ import annotations
@@ -206,7 +208,7 @@ def main() -> int:
         "--manifest",
         type=Path,
         required=True,
-        help="Path to manifest YAML file (e.g., config/job.yaml)",
+        help="Path to manifest YAML file (e.g., config/Dinesh_Dawonauth_Google_Data_Scientist_Resume.yaml)",
     )
     parser.add_argument(
         "--reproducible",

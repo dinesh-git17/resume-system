@@ -29,13 +29,13 @@ resume-system/
 │   └── summaries/            # Empty; reserved for future use
 │
 ├── config/                   # Build manifests (Manifest schema)
-│   └── job.yaml              # Example manifest selecting IDs for output
+│   └── <FirstName>_<LastName>_<Company>_<Role>_Resume.yaml  # Naming convention
 │
 ├── templates/                # READ-ONLY Jinja2 templates
 │   └── resume.html.j2        # Main resume template with StrictUndefined
 │
 ├── out/                      # Generated artifacts (gitignored)
-│   └── job.html              # Rendered resume output
+│   └── <FirstName>_<LastName>_<Company>_<Role>_Resume.html  # Rendered output
 │
 ├── scripts/                  # Trusted automation layer
 │   ├── bootstrap.sh          # Environment setup (uv, venv, pre-commit)
@@ -333,11 +333,11 @@ source .venv/bin/activate
 ### Building a Resume
 
 ```bash
-# Run the build engine with a manifest
-python scripts/engine.py --manifest config/job.yaml
+# Run the build engine with a manifest (naming convention: <FirstName>_<LastName>_<Company>_<Role>_Resume)
+python scripts/engine.py --manifest config/Dinesh_Dawonauth_Google_Data_Scientist_Resume.yaml
 
 # For reproducible builds (fixed timestamp/hash)
-python scripts/engine.py --manifest config/job.yaml --reproducible
+python scripts/engine.py --manifest config/Dinesh_Dawonauth_Google_Data_Scientist_Resume.yaml --reproducible
 ```
 
 Output is written to `out/<manifest-name>.html`.
@@ -512,7 +512,7 @@ Skills are located in `.claude/skills/`. Each skill has a `SKILL.md` defining it
 ## If You Only Read One Section
 
 1. **Source of Truth**: All resume data lives in `data/` and `content/` as YAML.
-2. **Entry Point**: `python scripts/engine.py --manifest config/job.yaml`
+2. **Entry Point**: `python scripts/engine.py --manifest config/<FirstName>_<LastName>_<Company>_<Role>_Resume.yaml`
 3. **Validation**: Run `./scripts/validate.sh` before commits (exit 0 = pass).
 4. **No Hallucination**: Never invent content. Use `content-librarian` skill to search.
 5. **Skills Required**: Use `jd-analyzer`, `content-librarian`, `manifest-composer`, `integrity-enforcer` for their respective domains. Do not perform these tasks manually.
@@ -588,5 +588,5 @@ Skills are located in `.claude/skills/`. Each skill has a `SKILL.md` defining it
 | `data/skills.yaml`               | Categorized skill lists (Skills schema)  |
 | `content/experience/google.yaml` | Work history (ExperienceFile schema)     |
 | `content/projects/projects.yaml` | Portfolio (ProjectFile schema)           |
-| `config/job.yaml`                | Example build manifest (Manifest schema) |
+| `config/*.yaml`                  | Build manifests (naming: `<FirstName>_<LastName>_<Company>_<Role>_Resume.yaml`) |
 | `templates/resume.html.j2`       | Resume HTML template                     |
