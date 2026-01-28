@@ -36,6 +36,7 @@ databases:
   - nosql
   - postgresql
   - redis
+  - snowflake
   - sqlite
   - supabase
 
@@ -50,6 +51,7 @@ tools:
   - github-actions
   - google-genai
   - husky
+  - jira
   - kubernetes
   - mypy
   - openai
