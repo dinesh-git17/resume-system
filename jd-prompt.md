@@ -174,6 +174,35 @@ After extracting JD requirements, perform gap analysis against available content
 2. Verify PDF generated.
 3. Read PDF to verify it fits on **single page**. If overflow, reduce content and rebuild.
 
+### Stage 9.5: Page Density Optimization
+
+After generating PDF, visually inspect for empty space at the bottom of the page. The resume should maximize use of the single page without overflow.
+
+**If significant empty space exists (>1 inch at bottom):**
+
+1. **Identify additional content to add** from available sources:
+   - Additional experience entry (e.g., `carleton-teaching-assistant` with 2-3 relevant bullets)
+   - Additional bullets on existing experience entries
+   - Additional project entry
+
+2. **Prioritize by relevance:**
+   - First, add content that strengthens JD alignment
+   - Second, add content that extends experience timeline (helps with years-of-experience gaps)
+   - Third, add content that demonstrates breadth
+
+3. **Update manifest** with additional content IDs.
+
+4. **Re-validate, rebuild, and regenerate PDF.**
+
+5. **Verify single page constraint** is still met. If overflow occurs, reduce the added content incrementally.
+
+**Content addition priority order:**
+1. Carleton TA experience (adds ~4 years to timeline, shows Python/SQL instruction)
+2. Additional relevant bullets on primary experience entries
+3. Additional project entries
+
+**Space utilization target:** Bottom margin should be minimal (0.25-0.5 inch max whitespace below Education section).
+
 ### Stage 10: Build Summary
 
 After successful build, output a structured summary:
@@ -186,6 +215,7 @@ After successful build, output a structured summary:
 | Validation | PASS |
 | Build | PASS (Xms) |
 | PDF Generation | PASS (XKB, 1 page) |
+| Page Density | Optimized / Added [content] to fill space |
 | Protocol Zero | PASS |
 
 **Artifacts:**
@@ -265,6 +295,7 @@ Before declaring completion, verify:
 - [ ] `integrity-enforcer` returns `status: PASS`
 - [ ] HTML contains all IDs specified in manifest
 - [ ] PDF renders as single page
+- [ ] Page density is optimized (minimal empty space at bottom)
 - [ ] No Protocol Zero violations
 
 ### Single Page Enforcement
