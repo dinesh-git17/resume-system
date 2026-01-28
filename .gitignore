@@ -21,6 +21,10 @@ build/
 drafts/*
 !drafts/.gitkeep
 
+# Job-specific manifests (regenerable from JD + content)
+config/*.yaml
+!config/.gitkeep
+
 # IDE and editor
 .idea/
 .vscode/
