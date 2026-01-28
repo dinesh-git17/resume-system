@@ -581,12 +581,12 @@ Skills are located in `.claude/skills/`. Each skill has a `SKILL.md` defining it
 
 ### Data Files
 
-| File                             | Purpose                                  |
-| -------------------------------- | ---------------------------------------- |
-| `data/profile.yaml`              | Contact information (Profile schema)     |
-| `data/education.yaml`            | Academic credentials (Education schema)  |
-| `data/skills.yaml`               | Categorized skill lists (Skills schema)  |
-| `content/experience/google.yaml` | Work history (ExperienceFile schema)     |
-| `content/projects/projects.yaml` | Portfolio (ProjectFile schema)           |
-| `config/*.yaml`                  | Build manifests (naming: `<FirstName>_<LastName>_<Company>_<Role>_Resume.yaml`) |
-| `templates/resume.html.j2`       | Resume HTML template                     |
+| File                                 | Purpose                                                                         |
+| ------------------------------------ | ------------------------------------------------------------------------------- |
+| `data/profile.yaml`                  | Contact information (Profile schema)                                            |
+| `data/education.yaml`                | Academic credentials (Education schema)                                         |
+| `data/skills.yaml`                   | Categorized skill lists (Skills schema)                                         |
+| `content/experience/experience.yaml` | Work history (ExperienceFile schema)                                            |
+| `content/projects/projects.yaml`     | Portfolio (ProjectFile schema)                                                  |
+| `config/*.yaml`                      | Build manifests (naming: `<FirstName>_<LastName>_<Company>_<Role>_Resume.yaml`) |
+| `templates/resume.html.j2`           | Resume HTML template                                                            |
