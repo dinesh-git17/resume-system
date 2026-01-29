@@ -28,6 +28,7 @@ These files define governance rules and operational context. Violations result i
 - **Target filename:** Name for the output manifest. Convention: `<FirstName>_<LastName>_<Company>_<Role>_Resume` (e.g., `Dinesh_Dawonauth_Google_Data_Scientist_Resume`).
 - **Bullet constraints:** Maximum bullets per experience entry.
 - **Project constraints:** Maximum projects to include.
+- **Cover letter:** Request with "build a cover letter" to generate a matching cover letter (see Stage 11).
 
 ---
 
@@ -217,11 +218,14 @@ After successful build, output a structured summary:
 | PDF Generation | PASS (XKB, 1 page) |
 | Page Density | Optimized / Added [content] to fill space |
 | Protocol Zero | PASS |
+| Cover Letter | SKIPPED (not requested) / PASS (XKB, 1 page) |
 
 **Artifacts:**
 - `config/<manifest_name>.yaml`
 - `out/<manifest_name>.html`
 - `out/<manifest_name>.pdf`
+- `out/<manifest_name>_Cover_Letter.html` (if requested)
+- `out/<manifest_name>_Cover_Letter.pdf` (if requested)
 
 **Content Selected:**
 
@@ -288,6 +292,13 @@ You MUST halt execution and report if:
 | HTML Resume | `out/<FirstName>_<LastName>_<Company>_<Role>_Resume.html`       | Rendered resume from template             |
 | PDF Resume  | `out/<FirstName>_<LastName>_<Company>_<Role>_Resume.pdf`        | Print-ready PDF via Chrome headless       |
 
+**Optional (if cover letter requested):**
+
+| Artifact          | Location                                                              | Description                          |
+| ----------------- | --------------------------------------------------------------------- | ------------------------------------ |
+| HTML Cover Letter | `out/<FirstName>_<LastName>_<Company>_<Role>_Cover_Letter.html`       | Cover letter matching resume styling |
+| PDF Cover Letter  | `out/<FirstName>_<LastName>_<Company>_<Role>_Cover_Letter.pdf`        | Print-ready cover letter PDF         |
+
 ### Verification Checklist
 
 Before declaring completion, verify:
@@ -297,6 +308,13 @@ Before declaring completion, verify:
 - [ ] PDF renders as single page
 - [ ] Page density is optimized (minimal empty space at bottom)
 - [ ] No Protocol Zero violations
+
+**If cover letter requested:**
+
+- [ ] Cover letter HTML generated
+- [ ] Cover letter PDF renders as single page
+- [ ] Cover letter includes JD keywords
+- [ ] No em dashes in cover letter
 
 ### Single Page Enforcement
 
@@ -308,7 +326,83 @@ If PDF overflows to 2 pages:
 
 ---
 
-## 8. JD Input Section
+## 8. Cover Letter Generation (OPTIONAL)
+
+This stage is executed **ONLY** when explicitly requested by the user (e.g., "build a cover letter for this role").
+
+### Stage 11: Generate Cover Letter
+
+**Trigger phrases:**
+- "build a cover letter"
+- "create a cover letter"
+- "write a cover letter"
+
+**If not requested, skip this stage entirely.**
+
+### 11.1 Cover Letter Template
+
+Use the same visual styling as the resume template (`templates/resume.html.j2`):
+- Matching header (name, contact info, links)
+- Arial font family
+- Same color scheme (#0066cc for links)
+- Professional letter format
+
+### 11.2 Cover Letter Structure
+
+```
+[Header - matching resume style]
+
+[Date]
+
+[Recipient]
+Hiring Manager
+[Company Name]
+[Location]
+
+Dear Hiring Manager,
+
+[Paragraph 1: Opening - Role title, team name, years of experience, core value proposition]
+
+[Paragraph 2: Current role alignment - Specific achievements that match JD requirements with metrics]
+
+[Paragraph 3: Additional relevant experience - Secondary role achievements, technical depth]
+
+[Paragraph 4: Technical skills - Direct list of required tools/technologies from JD]
+
+[Paragraph 5: Company-specific interest - Why this role/company, relocation if applicable]
+
+[Paragraph 6: Closing - Call to action, thank you]
+
+Sincerely,
+[Name]
+```
+
+### 11.3 Cover Letter Style Requirements
+
+- **No em dashes** - use commas or periods instead
+- **FAANG standard** - direct, technical, no fluff
+- **Human written feel** - natural flow, not robotic
+- **Keyword strong** - include JD requirements explicitly
+- **Quantified achievements** - use metrics from resume bullets
+- **Single page** - adjust font size/spacing if needed
+
+### 11.4 Cover Letter Output
+
+1. Write HTML to `out/<target_filename>_Cover_Letter.html`
+2. Generate PDF: `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --print-to-pdf="out/<target_filename>_Cover_Letter.pdf" --no-pdf-header-footer "out/<target_filename>_Cover_Letter.html"`
+3. Verify single page fit
+4. If overflow, reduce font size (10pt minimum) or condense paragraphs
+
+### 11.5 Cover Letter Artifacts
+
+| Artifact | Location |
+|----------|----------|
+| HTML Cover Letter | `out/<FirstName>_<LastName>_<Company>_<Role>_Cover_Letter.html` |
+| PDF Cover Letter | `out/<FirstName>_<LastName>_<Company>_<Role>_Cover_Letter.pdf` |
+
+---
+
+## 9. JD Input Section
 
 Paste the Job Description in the block below. Do not modify the delimiters.
 
@@ -322,10 +416,17 @@ Paste the Job Description in the block below. Do not modify the delimiters.
 
 ---
 
-## Execution Trigger
+## Execution Triggers
 
-After pasting the JD above, state:
+After pasting the JD above, use one of the following:
 
-"Build resume for this JD."
+**Resume only (default):**
+> "Build resume for this JD."
 
-The agent will execute the full pipeline and output the tailored resume with gap analysis and build summary.
+**Resume + Cover Letter:**
+> "Build resume and cover letter for this JD."
+
+**Cover Letter after resume is built:**
+> "Build a cover letter for this role."
+
+The agent will execute the appropriate pipeline stages based on the request.

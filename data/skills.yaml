@@ -14,14 +14,19 @@ frameworks:
   - fastapi
   - framer-motion
   - graphql
+  - kafka-streams
   - keras
+  - langchain
   - next.js
   - numpy
   - pandas
   - pydantic
+  - pyspark
   - pytorch
   - react
   - scikit-learn
+  - spark-sql
+  - spark-streaming
   - tailwindcss
   - tensorflow
   - textual
@@ -30,10 +35,13 @@ frameworks:
   - xgboost
 
 databases:
+  - apache-iceberg
   - bigquery
+  - delta-lake
   - duckdb
   - mysql
   - nosql
+  - pinecone
   - postgresql
   - redis
   - snowflake
@@ -42,6 +50,8 @@ databases:
 
 tools:
   - anthropic
+  - apache-airflow
+  - apache-flink
   - apache-kafka
   - apache-spark
   - biome
@@ -50,11 +60,13 @@ tools:
   - git
   - github-actions
   - google-genai
+  - great-expectations
   - husky
   - jira
   - kubernetes
   - mypy
   - openai
+  - parquet
   - playwright
   - pnpm
   - power-bi
@@ -62,11 +74,14 @@ tools:
   - pytest
   - ruff
   - tableau
+  - terraform
   - uv
   - vitest
 
 platforms:
   - aws
+  - databricks
+  - gcp
   - ios
   - sentry
   - vercel
@@ -74,10 +89,14 @@ platforms:
 methodologies:
   - A/B Testing Design
   - CI/CD for Data Pipelines
+  - Data Governance
   - Data Modeling
   - Data Quality and Validation
+  - DataOps
   - ETL/ELT Pipeline Design
+  - Lakehouse Architecture
   - Reproducible Research
+  - Stream Processing
 
 other:
   - API Design for Data Services
